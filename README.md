@@ -25,3 +25,5 @@ For this project, I only install django and pylint package.
 ### Setup statics and templates folders
 
 ### Start Login APP
+
+### Setup base view
