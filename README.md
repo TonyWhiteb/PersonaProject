@@ -20,3 +20,8 @@ If permission denied, try "sudo" as root
 
 For this project, I only install django and pylint package.
 
+## Startproject 
+
+### Setup statics and templates folders
+
+### Start Login APP
