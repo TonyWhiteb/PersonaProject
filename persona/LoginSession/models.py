@@ -43,7 +43,7 @@ class MyUserManager(BaseUserManager):
     def create_user(self, username,  password=None, **extra_fields):
 
         extra_fields.setdefault('is_staff', False)
-# TODO: setdefualt()
+# TODO: setdefault()
         extra_fields.setdefault('is_superuser', False)
 
         return self._create_user(username, password, **extra_fields)
@@ -84,7 +84,7 @@ class MyUser(AbstractBaseUser,PermissionsMixin):
         unique = True,
         help_text = _('Required valid email address'),
         validators = [username_validator],
-        error_message = {
+        error_messages = {
             'unique': _('A user with that emaill address already exist.'),
         },
     )
@@ -92,14 +92,14 @@ class MyUser(AbstractBaseUser,PermissionsMixin):
 
     is_staff = models.BooleanField(
         _('staff status'),
-        defualt = False,
+        default = False,
         help_text = _(
             'Designates whether the user can log into this admin site.'
         )
     )
     is_active = models.BooleanField(
         _('active'),
-        defualt = True,
+        default = True,
         help_text=_(
 
             'Designates whether this user should be treated as active. '
