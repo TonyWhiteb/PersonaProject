@@ -16,8 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from LoginSession import views
+from django.contrib.auth import views as auth_views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('base/', views.baseview)
+    path('base/', views.baseview),
+    path('login/', auth_views.login, {'template_name': 'LoginTest.html'}, name='login'),
 ]
