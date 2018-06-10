@@ -27,3 +27,7 @@ For this project, I only install django and pylint package.
 ### Start Login APP
 
 ### Setup base view
+
+### First Migration
+
+### Login Test

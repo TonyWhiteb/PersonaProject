@@ -21,6 +21,7 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('base/', views.baseview),
-    path('login/', auth_views.login, {'template_name': 'LoginTest.html'}, name='login'),
+    path('base/', views.baseview, name = 'base'),
+    path('', views.loginview, name='login'),
+    # path('',views.trackph, name = 'track'), # track the path
 ]
