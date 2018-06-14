@@ -7,6 +7,7 @@ Hi {{user.username}}
 {% else %}
 <form class="form-inline" action = {% url 'login' %} method = 'POST'  role="form">
     {% csrf_token %}
+    <span style = 'color:red'>{{ errormsg }}</span>
     <div class="form-group"><input type="text" class="form-control input-lg" name = 'username' id="exampleInputEmail2" placeholder="Your Email"></div>
     <div class="form-group"><input type="text" class="form-control input-lg" name = 'password' id="exampleInputPassword2" placeholder="Password"></div>
     <button type="submit" class="btn btn-lg btn-default">Login</button>

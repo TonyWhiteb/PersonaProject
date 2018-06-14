@@ -27,13 +27,13 @@ def loginview(request):
                 print(user)
                 if user is not None:
                     login(request,user)
-                    print('login Success')
+                    # print('login Success')
                     # return redirect(request.session['login_from'])
                     return render(request,'LoginTest.html',locals())
                     #
                 else:
-                    print(username,password,user)
-                    # errormsg = '用户名或密码错误！'
+                    # print(username,password,user)
+                    errormsg = 'Wrong Username or Password！'
                     return render(request,'LoginTest.html',locals())
             else:
                 return JsonResponse({"e":"chucuo"})
