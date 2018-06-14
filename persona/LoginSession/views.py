@@ -16,7 +16,7 @@ def loginview(request):
     else:
         # return HttpResponse('error')
         if request.method == 'GET':
-            request.session['login_from'] = request.META.get('HTTP_REFERER', '/')
+            # request.session['login_from'] = request.META.get('HTTP_REFERER', '/')
             # login_from
             return render(request,'LoginTest.html',locals())
         elif request.method == 'POST':
@@ -28,7 +28,8 @@ def loginview(request):
                 if user is not None:
                     login(request,user)
                     print('login Success')
-                    return redirect(request.session['login_from'])
+                    # return redirect(request.session['login_from'])
+                    return render(request,'LoginTest.html',locals())
                     #
                 else:
                     print(username,password,user)
@@ -41,4 +42,6 @@ def loginview(request):
 def logoutview(request):
     if request.user.is_authenticated:
         logout(request)
-        return render(request,'LoginTest.html')  
+        return render(request,'LoginTest.html')
+
+    # return HttpResponse('hello')
