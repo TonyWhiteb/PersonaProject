@@ -32,8 +32,8 @@ def loginview(request):
                     return render(request,'LoginTest.html',locals())
                     #
                 else:
-                    print(username,password,user)
-                    # errormsg = '用户名或密码错误！'
+                    # print(username,password,user)
+                    errormsg = 'Incorrect Email or Password!'
                     return render(request,'LoginTest.html',locals())
             else:
                 return JsonResponse({"e":"chucuo"})
