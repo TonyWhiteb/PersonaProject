@@ -1,6 +1,7 @@
 from django.shortcuts import render,HttpResponse, redirect
 from django.contrib.auth import authenticate,login,logout
 from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def baseview(request):
@@ -45,3 +46,6 @@ def logoutview(request):
         return render(request,'LoginTest.html')
 
     # return HttpResponse('hello')
+@login_required
+def ScannerPop(request):
+    pass
