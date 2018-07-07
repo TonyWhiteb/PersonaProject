@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if user.is_authenticated %}
+Hi {{user.username}}
+<a href="{% url 'test' %}"><button type="submit" class="btn btn-lg btn-default">Logout</button></a>
+{% else %}
+<form class="form-inline" action = {% url 'test' %} method = 'POST'  role="form">
+    {% csrf_token %}
+    <div class="form-group"><input type="text" class="form-control input-lg" name = 'username' id="LoginUserName" placeholder="Your Email"></div>
+    <div class="form-group"><input type="password" class="form-control input-lg" name = 'password' id="exampleInputPassword2" placeholder="Password"></div>
+    <button type="submit" class="btn btn-lg btn-default">Login</button>
+    <p>{{ errormsg }}</p>
+</form>
+
+{% endif %}
+{% endblock content %}
+
+
+
+{% block Jscript %}
+
+{% if user.is_authenticated %}
+
+<script>
+	function HoverWin(jQuery) {
+		$('#illustration').hover( function(){
+			$(this).addClass('expand');
+		}, function(){
+			$(this).removeClass('expand');
+		} );
+	}
+	$ (document).ready(HoverWin);
+</script> 
+  
+{% endif %}
+{% endblock Jscript%}

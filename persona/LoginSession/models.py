@@ -112,7 +112,7 @@ class MyUser(AbstractBaseUser,PermissionsMixin):
 
     is_admin = models.BooleanField(default = False)
     
-    object = MyUserManager()
+    objects = MyUserManager()
     
     USERNAME_FIELD = 'username'
 
