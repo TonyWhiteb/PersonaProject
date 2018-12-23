@@ -31,3 +31,5 @@ For this project, I only install django and pylint package.
 ### First Migration
 
 ### Login Test
+
+### Upload Picture Page (ajex)
