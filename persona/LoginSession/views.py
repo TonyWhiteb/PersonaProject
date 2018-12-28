@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def baseview(request):
-    return render(request,'LoginTest.html')
+    return render(request,'LoginPage.html')
 
 def trackph(request):
     return HttpResponse(request.META.get('HTTP_REFERER','/'))
@@ -13,13 +13,13 @@ def trackph(request):
 def loginview(request):
     if request.user.is_authenticated:
         # return redirect(request.META.get('HTTP_REFERER','/'))
-        return render(request,'LoginTest.html',locals())
+        return render(request,'LoginPage.html',locals())
     else:
         # return HttpResponse('error')
         if request.method == 'GET':
             # request.session['login_from'] = request.META.get('HTTP_REFERER', '/')
             # login_from
-            return render(request,'LoginTest.html',locals())
+            return render(request,'LoginPage.html',locals())
         elif request.method == 'POST':
             username = request.POST.get("username",'')
             password = request.POST.get("password",'')
@@ -30,12 +30,12 @@ def loginview(request):
                     login(request,user)
                     print('login Success')
                     # return redirect(request.session['login_from'])
-                    return render(request,'LoginTest.html',locals())
+                    return render(request,'LoginPage.html',locals())
                     #
                 else:
                     # print(username,password,user)
                     errormsg = 'Incorrect Email or Password!'
-                    return render(request,'LoginTest.html',locals())
+                    return render(request,'LoginPage.html',locals())
             else:
                 return JsonResponse({"e":"chucuo"})
 
@@ -43,7 +43,7 @@ def loginview(request):
 def logoutview(request):
     if request.user.is_authenticated:
         logout(request)
-        return render(request,'LoginTest.html')
+        return render(request,'LoginPage.html')
 
     # return HttpResponse('hello')
 @login_required
