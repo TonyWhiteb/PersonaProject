@@ -1,8 +1,6 @@
-from django.db import models
+from django.db import models # import the Django models namespace
 
-# Document Models
 
-class Document(models.Model):
-    description = models.CharField(max_length=255, blank=True)
-    document = models.FileField(upload_to='documents/')
-    uploaded_at = models.DateTimeField(auto_now_add=True)
+# Our main model: Uploaded Image
+class UploadedImage(models.Model):
+    image = models.ImageField("Uploaded image") # stores the filename of an uploaded image
