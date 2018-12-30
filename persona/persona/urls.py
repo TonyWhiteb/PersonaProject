@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from LoginSession import views
 from django.contrib.auth import views as auth_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -25,4 +27,4 @@ urlpatterns = [
     path('', views.loginview, name='login'),
     path('home/', views.logoutview, name = 'logout') 
     # path('',views.trackph, name = 'track'), # track the path
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
