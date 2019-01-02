@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'LoginSession',
+    'uploadimage',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +128,8 @@ STATICFILES_DIRS = [
 
 
 AUTH_USER_MODEL = 'LoginSession.MyUser'
+
+
+# at the bottom of settings.py
+MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'uploaded_media')
+MEDIA_URL = '/media/'
