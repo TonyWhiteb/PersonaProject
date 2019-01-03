@@ -8,5 +8,5 @@ router = routers.DefaultRouter()
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     # url(r'^', include(router.urls)),
-    path('', include(router.urls)),
+    path('', router.urls),
 ]
